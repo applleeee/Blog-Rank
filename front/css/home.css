@@ -1,0 +1,42 @@
+body {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+}
+
+header {
+   height: 80px;
+   background-color: #ccc;
+   display: flex;
+   align-items: center;
+   padding-left: 30px;
+}
+
+#logo {
+   font-size: 30px;
+}
+
+#nav {
+   position: fixed;
+   top: 80px;
+   left: 0;
+   bottom: 0;
+   width: 200px;
+   background-color: #eee;
+   overflow: auto;
+   padding: 10px;
+   padding-top: 30px;
+}
+
+main {
+   flex: 1;
+   margin-left: 220px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.guide {
+   margin-bottom: 20px;
+}
