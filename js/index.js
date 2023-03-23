@@ -53,6 +53,9 @@ const handleSubmit = async (e) => {
       ],
    });
 
+   table.setData(scrapResult);
+   table.redraw();
+
    const objectUrl = await downloadExcel(scrapResult);
 
    if (ifFrist) {
