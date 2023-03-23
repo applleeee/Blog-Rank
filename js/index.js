@@ -52,9 +52,7 @@ const handleSubmit = async (e) => {
          { title: "제목", field: "title" },
       ],
    });
-
-   table.setData(scrapResult);
-   table.redraw();
+   console.log(scrapResult);
 
    const objectUrl = await downloadExcel(scrapResult);
 
