@@ -13,7 +13,7 @@ module.exports = {
    },
    entry: { index: "./js/index.js" },
    output: {
-      path: path.resolve(__dirname, "assets"),
+      path: path.resolve(__dirname, "docs"),
       filename: "js/[name].js",
       clean: true,
    },
@@ -39,7 +39,7 @@ module.exports = {
       ],
    },
    devtool: "source-map",
-   mode: "development",
+   mode: "production",
    plugins: [
       new HtmlPlugin({
          template: "./index.html",
