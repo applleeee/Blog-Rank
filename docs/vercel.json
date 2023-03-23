@@ -1,11 +1,8 @@
 {
    "rewrites": [
       {
-         "source": "/search.naver/:path*",
-         "destination": "https://search.naver.com/:path*",
-         "headers": {
-            "host": "search.naver.com"
-         }
+         "source": "/search.naver/:where/:query/:mode",
+         "destination": "https://search.naver.com"
       }
    ]
 }
