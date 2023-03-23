@@ -39,7 +39,7 @@ module.exports = {
       ],
    },
    devtool: "source-map",
-   mode: "development",
+   mode: "production",
    plugins: [
       new HtmlPlugin({
          template: "./index.html",
