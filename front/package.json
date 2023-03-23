@@ -5,7 +5,8 @@
    "main": "index.js",
    "scripts": {
       "build": "webpack -w",
-      "dev": "webpack-dev-server --open --progress --hot"
+      "dev": "webpack-dev-server --open --progress --hot",
+      "vercel-build": "npm run build && vercel --prod"
    },
    "author": "",
    "license": "ISC",
