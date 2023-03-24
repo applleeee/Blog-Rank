@@ -2,6 +2,8 @@ import "../css/bootstrap.min.css";
 import "../css/main.css";
 import "../images/예시.png";
 import { downloadExcel, getSearchedResult } from "./scrap.js";
+import "../api/getData.js";
+import axios from "axios";
 
 const blogNameInput = document.querySelector(".blogName");
 const keywordListInput = document.querySelector(".keywords");
