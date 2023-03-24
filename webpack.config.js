@@ -11,10 +11,11 @@ module.exports = {
          },
       },
    },
-   entry: { index: "./js/index.js" },
+   entry: { index: "./js/index.js", api: "./api/getData.js" },
    output: {
       path: path.resolve(__dirname, "docs"),
       filename: "js/[name].js",
+      clean: true,
    },
    module: {
       rules: [
