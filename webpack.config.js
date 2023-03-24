@@ -11,7 +11,7 @@ module.exports = {
          },
       },
    },
-   entry: { index: "./js/index.js", api: "./api/getData.js" },
+   entry: { index: "./js/index.js" },
    output: {
       path: path.resolve(__dirname, "docs"),
       filename: "js/[name].js",
