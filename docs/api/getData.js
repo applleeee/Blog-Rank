@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export default async function getData(request, response) {
+   console.log("에러 확인");
    try {
       const res = await axios.get(request.body.url);
       response.send(res.data).status(200);
