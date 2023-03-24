@@ -14,8 +14,9 @@ module.exports = {
    entry: { index: "./js/index.js", scrap: "./js/scrap.js", getData: "./api/getData.js" },
    output: {
       path: path.resolve(__dirname, "docs"),
-      filename: "js/[name].js",
+      filename: "js/[name].[contenthash:8].js",
       clean: true,
+      publicPath: "/",
    },
    module: {
       rules: [
@@ -24,7 +25,9 @@ module.exports = {
             use: {
                loader: "file-loader",
                options: {
-                  name: "[name].[ext]",
+                  name: "js/[name].[ext]",
+                  publicPath: "/",
+                  outputPath: "/",
                },
             },
          },
