@@ -4,7 +4,7 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "build": "webpack -w",
+      "build": "webpack",
       "dev": "webpack-dev-server --open --progress --hot"
    },
    "author": "",
