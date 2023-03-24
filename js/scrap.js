@@ -7,11 +7,32 @@ export const getSearchedResult = async (data) => {
    const result = [];
 
    for (const [index, ele] of keywordArray.entries()) {
+      // 개발
+      // await axios({
+      //    url: `/search.naver?where=view&query=${encodeURIComponent(ele)}&mode=normal`,
+      //    method: "GET",
+      // })
+      //    .then((res) => {
+      //       const $ = cheerio.load(res.data);
+      //       const findBlog = $(`a[href=https://blog.naver.com/${blogName}]`);
+      //       const parentLI = $(findBlog).closest("li._svp_item");
+      //       const rank = parentLI.attr("data-cr-rank");
+      //       const title = parentLI.find("a.api_txt_lines").text();
+      //       result[index] = { keyword: ele, rank: rank, title: title };
+      //    })
+      //    .catch((err) => {
+      //       console.log(err);
+      //    });
+
+      // 배포
+      const url = `https://search.naver.com/search.naver?where=view&query=${encodeURIComponent(ele)}&mode=normal`;
       await axios({
-         url: `/search.naver?where=view&query=${encodeURIComponent(ele)}&mode=normal`,
-         method: "GET",
+         url: "/api/getData",
+         method: "POST",
+         data: { url },
       })
          .then((res) => {
+            console.log("where is error");
             const $ = cheerio.load(res.data);
             const findBlog = $(`a[href=https://blog.naver.com/${blogName}]`);
             const parentLI = $(findBlog).closest("li._svp_item");
@@ -20,6 +41,7 @@ export const getSearchedResult = async (data) => {
             result[index] = { keyword: ele, rank: rank, title: title };
          })
          .catch((err) => {
+            console.log("error?????");
             console.log(err);
          });
    }

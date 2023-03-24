@@ -1,8 +1,0 @@
-{
-   "rewrites": [
-      {
-         "source": "/search.naver/:where/:query/:mode",
-         "destination": "https://search.naver.com"
-      }
-   ]
-}

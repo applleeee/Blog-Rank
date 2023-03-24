@@ -15,7 +15,6 @@ module.exports = {
    output: {
       path: path.resolve(__dirname, "docs"),
       filename: "js/[name].js",
-      clean: true,
    },
    module: {
       rules: [
