@@ -32,7 +32,6 @@ export const getSearchedResult = async (data) => {
          data: { url },
       })
          .then((res) => {
-            console.log("where is error");
             const $ = cheerio.load(res.data);
             const findBlog = $(`a[href=https://blog.naver.com/${blogName}]`);
             const parentLI = $(findBlog).closest("li._svp_item");
@@ -41,7 +40,6 @@ export const getSearchedResult = async (data) => {
             result[index] = { keyword: ele, rank: rank, title: title };
          })
          .catch((err) => {
-            console.log("error?????");
             console.log(err);
          });
    }

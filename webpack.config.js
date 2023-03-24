@@ -11,16 +11,29 @@ module.exports = {
          },
       },
    },
-   entry: { index: "./js/index.js", getData: "./api/getData.js", scrap: "./js/scrap.js" },
+   entry: { index: "./js/index.js", scrap: "./js/scrap.js", getData: "./api/getData.js" },
    output: {
       path: path.resolve(__dirname, "docs"),
-      filename: "js/[name].js",
+      filename: "js/[name].[contenthash:8].js",
       clean: true,
+      publicPath: "/",
    },
    module: {
       rules: [
          {
+            test: /api\/getData\.js$/,
+            use: {
+               loader: "file-loader",
+               options: {
+                  name: "js/[name].[ext]",
+                  publicPath: "/",
+                  outputPath: "/",
+               },
+            },
+         },
+         {
             test: /\.js$/,
+            exclude: [path.resolve(__dirname, "api")],
             use: {
                loader: "babel-loader",
                options: {
@@ -42,6 +55,7 @@ module.exports = {
    plugins: [
       new HtmlPlugin({
          template: "./index.html",
+         chunks: ["index", "scrap", "getData"],
       }),
       new MiniCssExtractPlugin({
          linkType: false,
