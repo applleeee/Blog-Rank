@@ -1,8 +1,0 @@
-{
-   "rewrites": [
-      {
-         "source": "/search.naver/:path*",
-         "destination": "https://search.naver.com/:path*"
-      }
-   ]
-}
