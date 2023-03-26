@@ -1,1 +1,0 @@
-import axios from"axios";export default async function getData(o,s){console.log("에러 확인");try{const t=await axios.get(o.body.url);s.send(t.data).status(200)}catch(o){console.log("erororororor"),console.error(o),s.status(o.response?.status||500).end(o.message)}}

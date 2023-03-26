@@ -33,13 +33,13 @@ const handleSubmit = async (e) => {
       alert("두 항목 모두 입력해주세요!");
    }
 
-   const regExp = /[\{\}\[\]\/?.;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g; // 특수문자 체크("," 제외)
+   const regExp = /[\{\}\[\]\/?.;:|\)*~`!^\+<>@\#$%&\\\=\(\'\"]/g; // 특수문자 체크("," 제외)
 
    if (regExp.test(blogName) || regExp.test(keywords)) {
-      alert("특수문자가 포함되어 있습니다.");
+      alert("허용되지 않은 특수문자가 포함되어 있습니다.");
    }
 
-   const keywordArray = keywords.replace(/\s+/g, "").split(","); // 모든 공백 제거 후 "," 기준으로 나눔
+   const keywordArray = keywords.split(",");
 
    const data = { blogName, keywordArray };
    const scrapResult = await getSearchedResult(data);
