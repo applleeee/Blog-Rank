@@ -57,6 +57,7 @@ export const downloadExcel = async (data) => {
   sheet.columns = [
     { header: "키워드", key: "keyword" },
     { header: "순위", key: "rank" },
+    { header: "작성 날짜", key: "date" },
     { header: "글 제목", key: "title" },
   ];
 
